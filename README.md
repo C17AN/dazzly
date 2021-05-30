@@ -1,4 +1,4 @@
-## 🎨 나만의 팔레트 저장소
+## 🎨 나만의 팔레트 저장소 (제작중)
 
 ![screenshot](./screenshot.png)
 
