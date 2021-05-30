@@ -5,24 +5,32 @@ const usePalette = () => {
   const [palette, setPalette]: [string[], any] = useState([]);
 
   useEffect(() => {
-    const localPalette = localStorage.getItem("palette") ?? "";
-    // 브라우저에 저장된 팔레트가 없으면, 현재 작업한 팔레트를 저장함
-    if (localPalette.length == 0) {
-      localStorage.setItem("palette", JSON.stringify(palette));
-    } else {
-      const parsedLocalPalette = JSON.parse(localPalette);
-      currentColor !== null
-        ? localStorage.setItem("palette", JSON.stringify([...parsedLocalPalette, currentColor]))
-        : localStorage.setItem("palette", JSON.stringify([...parsedLocalPalette]));
-    }
+    const localPalette = localStorage.getItem("palette") ?? JSON.stringify([]);
+    setPalette(JSON.parse(localPalette));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("palette", JSON.stringify(palette));
   }, [palette]);
 
   const addColor = (): void => {
+    // 선택한 색이 중복되거나 없을 경우
+    if (currentColor === null) return;
+    if (palette.includes(currentColor)) {
+      console.log("이미 존재하는 색입니다.");
+      return;
+    }
     setPalette([...palette, currentColor]);
+    localStorage.setItem("palette", JSON.stringify(palette));
+    console.log(JSON.stringify(palette));
   };
 
   const removeColor = (color: string): void => {
-    setPalette(palette.filter((_color) => _color !== color));
+    console.log(palette);
+    palette.forEach((_color) => console.log(_color, color));
+    setPalette((palette: string[]) => palette.filter((_color) => _color !== color));
+    localStorage.setItem("palette", JSON.stringify(palette));
+    console.log(JSON.stringify(palette));
   };
 
   return { palette, setCurrentColor, addColor, removeColor };
