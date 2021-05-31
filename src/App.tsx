@@ -5,8 +5,8 @@ import { GlobalStyle } from "./style/global";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MyPalette from "./pages/MyPalette";
-import Home from "./pages/Home";
 import Competition from "./pages/Competition";
+import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import Gallery from "./pages/Gallery";
 
