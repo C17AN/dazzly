@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MyPalette from "./pages/MyPalette";
 import Competition from "./pages/Competition";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import Settings from "./pages/Settings";
 import Gallery from "./pages/Gallery";
 
