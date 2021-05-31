@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import Palette from "./components/Palette";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { GlobalStyle } from "./style/global";
 import Slot from "./components/Slot";
 import AddPalette from "./components/AddPalette";
@@ -20,20 +21,22 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-      <PaletteContext.Provider value={{ paletteCount, setPaletteCount }}>
-        <Slot>
-          {Array.from(Array(paletteCount), (i) => i).map((palette: any, index: number) => (
-            <Palette index={index + 1} />
-          ))}
-          {Array.from(Array(4 - paletteCount), (i) => i).map((palette, index) => (
-            <AddPalette />
-          ))}
-          {/* <Palette />
+      <Router>
+        <PaletteContext.Provider value={{ paletteCount, setPaletteCount }}>
+          <Slot>
+            {Array.from(Array(paletteCount), (i) => i).map((palette: any, index: number) => (
+              <Palette index={index + 1} />
+            ))}
+            {Array.from(Array(4 - paletteCount), (i) => i).map((palette, index) => (
+              <AddPalette />
+            ))}
+            {/* <Palette />
         <Palette />
         <AddPalette />
         <AddPalette /> */}
-        </Slot>
-      </PaletteContext.Provider>
+          </Slot>
+        </PaletteContext.Provider>
+      </Router>
       <Footer />
     </div>
   );
