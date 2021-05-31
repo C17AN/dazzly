@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.png";
 
 interface Props {}
@@ -9,14 +10,24 @@ const Header = (props: Props) => {
     <Container>
       <Logo>
         <img src={logo} width={48} height={48} />
-        <p>Dazzly</p>
+        <Link to="/">
+          <p>Dazzly</p>
+        </Link>
       </Logo>
       <Nav>
         <ul>
-          <li>내 팔레트 관리</li>
-          <li>팔레트 갤러리</li>
-          <li>팔레트 월드컵</li>
-          <li>설정</li>
+          <Link to="/palette">
+            <li>내 팔레트 관리</li>
+          </Link>
+          <Link to="/gallery">
+            <li>팔레트 갤러리</li>
+          </Link>
+          <Link to="/competition">
+            <li>팔레트 월드컵</li>
+          </Link>
+          <Link to="setting">
+            <li>설정</li>
+          </Link>
         </ul>
       </Nav>
     </Container>
@@ -36,6 +47,10 @@ const Logo = styled.div`
   justify-content: space-evenly;
   margin-left: 2rem;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
   p {
     font-size: 1.5rem;
     font-family: "SDSamliphopangche_Outline";
@@ -51,6 +66,10 @@ const Nav = styled.div`
   ul {
     display: flex;
     margin-right: 2rem;
+    a {
+      text-decoration: none;
+      color: #333;
+    }
     li {
       margin: 0 1.5rem;
       font-family: "KyoboHand";

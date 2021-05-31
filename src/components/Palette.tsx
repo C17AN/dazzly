@@ -54,7 +54,7 @@ const Container = styled.div<{ palette: string[] }>`
     gradient = gradient.substring(0, gradient.length - 1) + ")";
     return gradient;
   }};
-  background-size: 400% 400%;
+  background-size: 300% 300%;
   animation: gradient 10s ease infinite;
   @keyframes gradient {
     0% {
@@ -70,7 +70,7 @@ const Container = styled.div<{ palette: string[] }>`
 `;
 
 const PaletteConfig = styled.div`
-  font-family: "KyoboHand";
+  font-family: "kyoboHand";
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1rem;
@@ -122,6 +122,8 @@ const PaletteConfig = styled.div`
     padding: 10px;
     font-size: 0.92rem;
     border-radius: 6px;
+    font-family: "kyoboHand";
+
     outline: none;
     border: 3px solid #e7645b;
     cursor: pointer;

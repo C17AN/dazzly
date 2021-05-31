@@ -1,11 +1,14 @@
 import React, { createContext, useEffect, useState } from "react";
-import Palette from "./components/Palette";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { GlobalStyle } from "./style/global";
-import Slot from "./components/Slot";
-import AddPalette from "./components/AddPalette";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import MyPalette from "./pages/MyPalette";
+import Home from "./pages/Home";
+import Competition from "./pages/Competition";
+import Settings from "./pages/Settings";
+import Gallery from "./pages/Gallery";
 
 export const PaletteContext = createContext<any | null>(null);
 
@@ -20,24 +23,18 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Header />
-      <Router>
-        <PaletteContext.Provider value={{ paletteCount, setPaletteCount }}>
-          <Slot>
-            {Array.from(Array(paletteCount), (i) => i).map((palette: any, index: number) => (
-              <Palette index={index + 1} />
-            ))}
-            {Array.from(Array(4 - paletteCount), (i) => i).map((palette, index) => (
-              <AddPalette />
-            ))}
-            {/* <Palette />
-        <Palette />
-        <AddPalette />
-        <AddPalette /> */}
-          </Slot>
-        </PaletteContext.Provider>
-      </Router>
-      <Footer />
+      <PaletteContext.Provider value={{ paletteCount, setPaletteCount }}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/" component={Home} exact></Route>
+            <Route path="/palette" component={MyPalette}></Route>
+            <Route path="/gallery" component={Gallery}></Route>
+            <Route path="/competition" component={Competition}></Route>
+            <Route path="/setting" component={Settings}></Route>
+          </Switch>
+        </Router>
+      </PaletteContext.Provider>
     </div>
   );
 }
