@@ -11,7 +11,7 @@ const Palette: React.FC<IProps> = ({ index }) => {
     usePalette(index);
 
   return (
-    <Container>
+    <Container palette={palette}>
       <PaletteConfig>
         <label htmlFor="">📋 {index}번 팔레트</label>
         <input className="palette-title" placeholder={"팔레트 이름을 정해주세요"} />
@@ -39,13 +39,34 @@ const Palette: React.FC<IProps> = ({ index }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ palette: string[] }>`
   padding: 16px;
   display: flex;
   flex: 1;
   justify-content: center;
   border-right: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
+  background: ${(props) => {
+    let gradient: string = "linear-gradient(-36deg, #fff,";
+    props.palette.forEach((color) => {
+      gradient += color + ",";
+    });
+    gradient = gradient.substring(0, gradient.length - 1) + ")";
+    return gradient;
+  }};
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 const PaletteConfig = styled.div`
@@ -54,7 +75,7 @@ const PaletteConfig = styled.div`
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 10px 10px 15px 3px rgb(0 0 0 / 30%);
   backdrop-filter: blur(5px);
 
