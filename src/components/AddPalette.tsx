@@ -18,9 +18,9 @@ const AddPalette = (props: Props) => {
   };
 
   return (
-    <Container>
+    <Container onClick={createNewPalette}>
       <PaletteConfig>
-        <button onClick={createNewPalette}>새 팔레트를 추가해 보세요</button>
+        <button>새 팔레트를 추가해 보세요</button>
       </PaletteConfig>
     </Container>
   );
