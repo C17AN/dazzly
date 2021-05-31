@@ -55,7 +55,7 @@ const PaletteConfig = styled.div`
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 10px 20px 50px rgb(0 0 0 / 50%);
+  box-shadow: 10px 10px 15px 3px rgb(0 0 0 / 30%);
   backdrop-filter: blur(5px);
 
   label {
