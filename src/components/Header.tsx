@@ -9,7 +9,7 @@ const Header = (props: Props) => {
     <Container>
       <Logo>
         <img src={logo} width={48} height={48} />
-        <p>Palette.io</p>
+        <p>Colorful.io</p>
       </Logo>
     </Container>
   );

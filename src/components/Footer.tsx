@@ -9,7 +9,6 @@ const Footer = (props: Props) => {
 
 const Container = styled.div`
   height: 80px;
-  background-color: #2766b8;
   border-bottom: 15px solid #d3e3ec;
 `;
 
