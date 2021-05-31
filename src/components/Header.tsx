@@ -9,7 +9,7 @@ const Header = (props: Props) => {
     <Container>
       <Logo>
         <img src={logo} width={48} height={48} />
-        <p>Colorful.io</p>
+        <p>Dazzly</p>
       </Logo>
       <Nav>
         <ul>
@@ -33,12 +33,15 @@ const Container = styled.div`
 
 const Logo = styled.div`
   display: flex;
-  width: 180px;
   justify-content: space-evenly;
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   align-items: center;
   p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-family: "SDSamliphopangche_Outline";
+    font-weight: bold;
+    color: #333;
+    margin-left: 1rem;
   }
 `;
 
