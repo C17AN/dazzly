@@ -48,9 +48,14 @@ const Container = styled.div`
 `;
 
 const PaletteConfig = styled.div`
-  border: 1px solid #cdcdcd;
+  font-family: "KyoboHand";
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
+  backdrop-filter: blur(5px);
 
   label {
     display: block;
