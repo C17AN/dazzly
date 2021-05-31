@@ -2,15 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import usePalette from "../hooks/usePalette";
 
-interface Props {}
+interface IProps {
+  index: number;
+}
 
-const Palette = (props: Props) => {
-  const { palette, addColor, removeColor, setCurrentColor } = usePalette();
+const Palette: React.FC<IProps> = ({ index }) => {
+  const { palette, addColor, removeColor, setCurrentColor } = usePalette(index);
 
   return (
     <Container>
       <PaletteConfig>
-        <label htmlFor="">📋 팔레트 제목</label>
+        <label htmlFor="">📋 {index}번 팔레트</label>
         <input className="palette-title" placeholder={"팔레트 이름을 정해주세요"} />
         <div className="palette-add-color-container">
           <label>🎨 색상 선택</label>
@@ -19,7 +21,7 @@ const Palette = (props: Props) => {
             색상 추가
           </button>
         </div>
-        <label htmlFor="">📝 팔레트 색상 목록</label>
+        <label htmlFor="">📝 팔레트 색상 목록 (최대 8색)</label>
         <div>
           {palette.length !== 0 ? (
             palette.map((color, idx) => (
@@ -38,15 +40,17 @@ const Palette = (props: Props) => {
 
 const Container = styled.div`
   padding: 16px;
-  border: 1px solid #cdcdcd;
   display: flex;
+  flex: 1;
+  justify-content: center;
+  border-right: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
 `;
 
 const PaletteConfig = styled.div`
   border: 1px solid #cdcdcd;
   padding: 1rem;
   border-radius: 12px;
-  margin-left: 30px;
 
   label {
     display: block;
