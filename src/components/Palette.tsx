@@ -7,7 +7,8 @@ interface IProps {
 }
 
 const Palette: React.FC<IProps> = ({ index }) => {
-  const { palette, addColor, removeColor, setCurrentColor } = usePalette(index);
+  const { palette, addColor, removeColor, setCurrentColor, paletteName, changePaletteName } =
+    usePalette(index);
 
   return (
     <Container>
@@ -30,7 +31,7 @@ const Palette: React.FC<IProps> = ({ index }) => {
               </Color>
             ))
           ) : (
-            <Color>팔레트에 색을 추가해 보세요!</Color>
+            <Color>"색상 추가"를 눌러 색을 추가해 보세요!</Color>
           )}
         </div>
       </PaletteConfig>
@@ -54,7 +55,7 @@ const PaletteConfig = styled.div`
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
+  box-shadow: 10px 20px 50px rgb(0 0 0 / 50%);
   backdrop-filter: blur(5px);
 
   label {
