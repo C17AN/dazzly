@@ -29,7 +29,14 @@ const MyPalette = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+`;
 
 const Menu = styled.div`
   height: 50px;
@@ -37,6 +44,7 @@ const Menu = styled.div`
   margin: 0 1.5rem;
   align-items: center;
   justify-content: space-between;
+
   h3 {
     font-size: 1.05rem;
   }
@@ -46,6 +54,7 @@ const Menu = styled.div`
     label {
       font-size: 0.88rem;
       font-family: "kyobohand";
+      cursor: pointer;
     }
   }
   #background-show-checkbox {

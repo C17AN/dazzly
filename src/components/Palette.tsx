@@ -14,7 +14,10 @@ const Palette: React.FC<IProps> = ({ index }) => {
     <Container palette={palette}>
       <PaletteConfig>
         <label htmlFor="">📋 {index}번 팔레트</label>
-        <input className="palette-title" placeholder={"팔레트 이름을 정해주세요"} />
+        <Title>
+          <input className="palette-title" placeholder={"팔레트 이름을 정해주세요"} />
+          <button>확인</button>
+        </Title>
         <div className="palette-add-color-container">
           <label>🎨 색상 선택</label>
           <input type="color" onChange={(e) => setCurrentColor(e.target.value)} />
@@ -66,6 +69,14 @@ const Container = styled.div<{ palette: string[] }>`
     100% {
       background-position: 0% 50%;
     }
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  button {
+    height: auto;
+    cursor: pointer;
   }
 `;
 
