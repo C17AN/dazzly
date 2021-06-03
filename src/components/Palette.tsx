@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import usePalette from "../hooks/usePalette";
+import CloseIcon from "../assets/svg/close-x-icon.svg";
 
 interface IProps {
   index: number;
@@ -13,7 +14,10 @@ const Palette: React.FC<IProps> = ({ index }) => {
   return (
     <Container palette={palette}>
       <PaletteConfig>
-        <label htmlFor="">📋 {index}번 팔레트</label>
+        <Header>
+          <label htmlFor="">📋 {index}번 팔레트</label>
+          <img src={CloseIcon} />
+        </Header>
         <Title>
           <input className="palette-title" placeholder={"팔레트 이름을 정해주세요"} />
           <button>확인</button>
@@ -47,8 +51,8 @@ const Container = styled.div<{ palette: string[] }>`
   display: flex;
   flex: 1;
   justify-content: center;
-  border-right: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: ${(props) => {
     let gradient: string = "linear-gradient(-36deg, #fff,";
     props.palette.forEach((color) => {
@@ -64,11 +68,20 @@ const Container = styled.div<{ palette: string[] }>`
       background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 100% 100%;
     }
     100% {
       background-position: 0% 50%;
     }
+  }
+`;
+
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 1rem;
+    cursor: pointer;
   }
 `;
 
@@ -131,9 +144,9 @@ const PaletteConfig = styled.div`
   .palette-add-color-button {
     width: 100%;
     padding: 10px;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     border-radius: 6px;
-    font-family: "kyoboHand";
+    font-family: "KoPub Dotum";
 
     outline: none;
     border: 3px solid #e7645b;
