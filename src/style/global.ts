@@ -6,7 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
         margin: 0;
-
+        &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
     }
     body {
         font-family: 'NanumSquare';

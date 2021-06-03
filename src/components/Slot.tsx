@@ -8,6 +8,7 @@ const Slot: React.FC = ({ children }) => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  background-color: #e7c9d162;
 `;
 
 export default Slot;

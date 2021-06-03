@@ -30,7 +30,6 @@ const MyPalette = () => {
 };
 
 const Container = styled.div`
-  overflow: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -41,9 +40,10 @@ const Container = styled.div`
 const Menu = styled.div`
   height: 50px;
   display: flex;
-  margin: 0 1.5rem;
+  padding: 0 1.5rem;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   h3 {
     font-size: 1.05rem;

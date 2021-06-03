@@ -37,7 +37,7 @@ const Header = (props: Props) => {
 const Container = styled.div`
   height: 80px;
   display: flex;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   font-family: "Coming Soon";
 `;
