@@ -26,5 +26,11 @@ export const GlobalStyle = createGlobalStyle`
             font-weight: normal;
             font-style: normal;
         }
+        @font-face {
+            font-family: 'Cafe24Ssukssuk';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Ssukssuk.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
     }
 `;

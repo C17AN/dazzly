@@ -42,12 +42,14 @@ const Description = styled.div`
   h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
     -webkit-animation: focus-in-expand 1s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: focus-in-expand 1s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   p {
     font-size: 1.4rem;
+    font-family: "Cafe24Ssukssuk";
     margin: 1rem 0;
   }
   @-webkit-keyframes focus-in-expand {
@@ -79,10 +81,11 @@ const Description = styled.div`
 
   @media screen and (max-width: 768px) {
     & {
-      padding: 1rem;
+      padding: 0.5rem 1rem 1rem 1rem;
     }
     h2 {
       font-size: 1.7rem;
+      margin-bottom: 20px;
     }
     p {
       font-size: 1.1rem;
