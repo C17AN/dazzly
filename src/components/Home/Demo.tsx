@@ -43,7 +43,7 @@ const Demo = () => {
               <p className="photo-by-description">Photo By : C17AN</p>
             </ImageTitle>
             <ImageContainer>
-              <img src={demo1} height={300} />
+              <img src={demo1} />
               <ImagePaletteContainer>
                 <div className="demo-palette-1-blue" />
                 <div className="demo-palette-1-orange_1" />
@@ -94,7 +94,7 @@ const ImageContainer = styled.div`
   }
   @media screen and (max-width: 768px) {
     img {
-      width: 200px;
+      width: auto;
     }
   }
 `;

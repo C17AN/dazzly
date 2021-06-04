@@ -8,7 +8,7 @@ const Home = () => {
       <TopContent>
         <Description>
           <h2>오늘의 나는, 과연 어떤 색일까?</h2>
-          <p>여러분의 색감을 아낌없이 어필해 보세요!</p>
+          <p>여러분의 색감을 어필해 보세요.</p>
           <p>색으로 표현하는 SNS, 대즐리</p>
         </Description>
         <Demo />
@@ -42,6 +42,7 @@ const Description = styled.div`
   h2 {
     font-size: 2.5rem;
     font-weight: 300;
+    margin-bottom: 20px;
     -webkit-animation: focus-in-expand 1s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: focus-in-expand 1s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }

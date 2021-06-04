@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PhotoComponent from "../../common/PhotoComponent";
+import newIcon from "../../assets/icon/new.png";
 
 interface Props {}
 
@@ -8,6 +9,7 @@ const Recent = (props: Props) => {
   return (
     <Container>
       <Title>
+        <img src={newIcon} />
         <h3>새로 추가된 팔레트</h3>
       </Title>
 
@@ -42,6 +44,12 @@ const PhotoContainer = styled.div`
 
 const Title = styled.div`
   padding: 1.5em;
+  display: flex;
+  align-items: center;
+  img {
+    height: 1.5rem;
+    margin-right: 10px;
+  }
   h3 {
     font-size: 1.5rem;
     font-family: "KoPub Dotum";
