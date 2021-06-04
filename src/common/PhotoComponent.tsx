@@ -37,9 +37,15 @@ const Container = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem 2rem 0.5rem 2rem;
-  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
+
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
   @media screen and (max-width: 768px) {
     & {
       padding: 0.5rem 2rem 0.5rem 2rem;
@@ -84,6 +90,7 @@ const ImagePaletteContainer = styled.div`
   display: flex;
   margin-left: 1rem;
   flex-direction: column;
+
   .demo-palette-1-blue::after {
     content: " ";
     display: flex;

@@ -27,8 +27,8 @@ const Recent = (props: Props) => {
 };
 
 const Container = styled.div`
-  padding: 2rem;
-  background-color: rgba(150, 230, 180, 0.2);
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: rgba(236, 22, 172, 0.05);
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 768px) {
@@ -52,7 +52,6 @@ const Title = styled.div`
   }
   h3 {
     font-size: 1.5rem;
-    font-family: "KoPub Dotum";
     font-weight: 100;
   }
   @media screen and (max-width: 768px) {

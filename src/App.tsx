@@ -35,6 +35,7 @@ function App() {
             <Route path="/setting" component={Settings}></Route>
             <Route path="/signup" component={SignUp}></Route>
           </Switch>
+          <Footer />
         </Router>
       </PaletteContext.Provider>
     </div>

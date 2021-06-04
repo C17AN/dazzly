@@ -146,7 +146,6 @@ const PaletteConfig = styled.div`
     padding: 10px;
     font-size: 0.9rem;
     border-radius: 6px;
-    font-family: "KoPub Dotum";
 
     outline: none;
     border: 3px solid #e7645b;

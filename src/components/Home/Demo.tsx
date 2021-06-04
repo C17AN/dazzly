@@ -67,7 +67,7 @@ const Container = styled.div`
   padding: 0.5rem 2rem 0.5rem 2rem;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 5px 3px rgba(51, 9, 48, 0.6);
   width: 750px;
   @media screen and (max-width: 768px) {
     & {
