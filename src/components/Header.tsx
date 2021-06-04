@@ -65,6 +65,7 @@ const Container = styled.div`
   height: 80px;
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
   }
