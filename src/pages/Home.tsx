@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import Demo from "../components/Home/Demo";
+import Recent from "../components/Home/Recent";
 
 const Home = () => {
   return (
     <Container>
-      <Description>
-        <h2>오늘의 나는, 과연 어떤 색일까?</h2>
-        <p>여러분의 색감을 아낌없이 어필해 보세요!</p>
-        <p>색으로 표현하는 SNS, 대즐리</p>
-      </Description>
-      <Demo />
+      <TopContent>
+        <Description>
+          <h2>오늘의 나는, 과연 어떤 색일까?</h2>
+          <p>여러분의 색감을 아낌없이 어필해 보세요!</p>
+          <p>색으로 표현하는 SNS, 대즐리</p>
+        </Description>
+        <Demo />
+      </TopContent>
+      <Recent />
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding: 1.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   font-family: "koPub Dotum";
   h2 {
@@ -55,6 +59,14 @@ const Container = styled.div`
       opacity: 1;
     }
   }
+`;
+
+const TopContent = styled.div`
+  display: flex;
+  padding: 1.5rem;
+
+  justify-content: space-between;
+  background-color: rgba(230, 155, 180, 0.1);
 `;
 
 const Description = styled.div`
