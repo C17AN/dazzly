@@ -78,6 +78,7 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   .photo-title {
     margin: 1rem 0 0.5rem 0;
@@ -94,7 +95,9 @@ const ImageContainer = styled.div`
   }
   @media screen and (max-width: 768px) {
     img {
-      width: auto;
+      flex: 1;
+      max-width: 100%;
+      height: auto;
     }
   }
 `;
@@ -160,6 +163,11 @@ const ImagePaletteContainer = styled.div`
     background-color: #3b520a;
     width: 150px;
     height: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      display: none;
+    }
   }
 `;
 

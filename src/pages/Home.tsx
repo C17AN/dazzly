@@ -84,11 +84,11 @@ const Description = styled.div`
       padding: 0.5rem 1rem 1rem 1rem;
     }
     h2 {
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       margin-bottom: 20px;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 `;
