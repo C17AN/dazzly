@@ -13,7 +13,7 @@ const PhotoComponent = (props: Props) => {
       <ContentContainer>
         <ImageTitle>
           <img src={shutter} />
-          <p className="photo-by-description">Photo By : C17AN</p>
+          <p className="photo-by-description">Photo By @C17AN</p>
         </ImageTitle>
         <ImageContainer>
           <img src={demo1} width={200} height={120} />
@@ -88,43 +88,42 @@ const ImagePaletteContainer = styled.div`
     content: " ";
     display: flex;
     background-color: #1d5491;
-    width: 120px;
     height: 20px;
   }
   .demo-palette-1-orange_1::after {
     content: " ";
     display: flex;
     background-color: #e9ad83;
-    width: 120px;
     height: 20px;
   }
   .demo-palette-1-orange_2::after {
     content: " ";
     display: flex;
     background-color: #82676a;
-    width: 120px;
     height: 20px;
   }
   .demo-palette-1-orange_3::after {
     content: " ";
     display: flex;
     background-color: #a57466;
-    width: 120px;
     height: 20px;
   }
   .demo-palette-1-black::after {
     content: " ";
     display: flex;
     background-color: #1d1c1b;
-    width: 120px;
     height: 20px;
   }
   .demo-palette-1-green::after {
     content: " ";
     display: flex;
     background-color: #3b520a;
-    width: 120px;
     height: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      width: 80px;
+    }
   }
 `;
 

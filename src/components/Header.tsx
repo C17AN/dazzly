@@ -3,11 +3,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.png";
 import navbarIcon from "../assets/svg/navbar-icon.svg";
+import { useSelector } from "react-redux";
+import rootReducer from "../redux/reducer/index";
 
 interface Props {}
 
 const Header = (props: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { isSignedIn } = useSelector((state: any) => state.authReducer);
   return (
     <Container>
       <Logo>
@@ -22,20 +25,37 @@ const Header = (props: Props) => {
           className="navbar-icon"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         />
-        <ul>
-          <Link to="/palette">
-            <li>내 팔레트 관리</li>
-          </Link>
-          <Link to="/gallery">
-            <li>팔레트 갤러리</li>
-          </Link>
-          <Link to="/competition">
-            <li>팔레트 월드컵</li>
-          </Link>
-          <Link to="setting">
-            <li>설정</li>
-          </Link>
-        </ul>
+        {isSignedIn ? (
+          <ul>
+            <Link to="/palette">
+              <li>내 팔레트 관리</li>
+            </Link>
+            <Link to="/gallery">
+              <li>팔레트 갤러리</li>
+            </Link>
+            <Link to="/competition">
+              <li>팔레트 월드컵</li>
+            </Link>
+            <Link to="setting">
+              <li>마이페이지</li>
+            </Link>
+          </ul>
+        ) : (
+          <ul>
+            <Link to="/palette">
+              <li>내 팔레트 관리</li>
+            </Link>
+            <Link to="/gallery">
+              <li>팔레트 갤러리</li>
+            </Link>
+            <Link to="/competition">
+              <li>팔레트 월드컵</li>
+            </Link>
+            <Link to="/signup">
+              <li>시작하기</li>
+            </Link>
+          </ul>
+        )}
       </Nav>
     </Container>
   );

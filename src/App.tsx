@@ -9,6 +9,7 @@ import Competition from "./pages/Competition";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import Gallery from "./pages/Gallery";
+import SignUp from "./pages/SignUp";
 
 export const PaletteContext = createContext<any | null>(null);
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/gallery" component={Gallery}></Route>
             <Route path="/competition" component={Competition}></Route>
             <Route path="/setting" component={Settings}></Route>
+            <Route path="/signup" component={SignUp}></Route>
           </Switch>
         </Router>
       </PaletteContext.Provider>

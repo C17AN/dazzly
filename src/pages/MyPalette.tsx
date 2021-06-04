@@ -11,7 +11,10 @@ const MyPalette = () => {
   return (
     <Container>
       <Menu>
-        <h3>내 팔레트 목록</h3>
+        <div>
+          <h3>내 사진 목록</h3>
+          <h3>내 팔레트 목록</h3>
+        </div>
         <div>
           <input type="checkbox" id="background-show-checkbox" />
           <label htmlFor="background-show-checkbox">배경 그라데이션 효과 표시</label>

@@ -20,7 +20,7 @@ const Demo = () => {
           <ContentContainer>
             <ImageTitle>
               <img src={shutter} />
-              <p className="photo-by-description">Photo By : C17AN</p>
+              <p className="photo-by-description">Photo By @C17AN</p>
             </ImageTitle>
             <ImageContainer>
               <img src={demo1} />
@@ -40,7 +40,7 @@ const Demo = () => {
           <ContentContainer>
             <ImageTitle>
               <img src={shutter} />
-              <p className="photo-by-description">Photo By : C17AN</p>
+              <p className="photo-by-description">Photo By @C17AN</p>
             </ImageTitle>
             <ImageContainer>
               <img src={demo1} />
