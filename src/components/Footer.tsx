@@ -1,16 +1,60 @@
 import React from "react";
 import styled from "styled-components";
+import LogoIcon from "../assets/logo/logo.png";
 
 interface Props {}
 
 const Footer = (props: Props) => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Slogan>
+        <Logo>
+          <img src={LogoIcon} />
+          <p className="title-dazzly">Dazzly</p>
+        </Logo>
+        <p>색, 그리고 일상.</p>
+      </Slogan>
+    </Container>
+  );
 };
 
 const Container = styled.div`
-  height: 80px;
-  margin-top: 2rem;
-  border-bottom: 15px solid #d3e3ec;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  font-weight: 100;
+  border-top: 1rem solid #fff;
+  padding: 2rem;
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  img {
+    width: 36px;
+    height: 36px;
+  }
+  p {
+    font-size: 32px !important;
+    margin-left: 1rem;
+  }
+`;
+
+const Slogan = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .title-dazzly {
+    font-family: "SDSamliphopangche_Outline";
+  }
+  p {
+    text-align: right;
+    font-size: 0.9rem;
+  }
 `;
 
 export default Footer;
