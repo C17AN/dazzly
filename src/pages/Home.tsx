@@ -10,6 +10,7 @@ const Home = () => {
         <p>색으로 표현하는 SNS, 대즐리</p>
       </Description>
       <DemoImageCard>
+        <p>Photo By : C17AN</p>
         <ImageContainer>
           <img src={demo1} height={300} />
           <ImagePaletteContainer>
@@ -30,24 +31,57 @@ const Container = styled.div`
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
+  font-family: "koPub Dotum";
   h2 {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 300;
+    -webkit-animation: tracking-in-expand 1.4s 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 1.4s 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   p {
     font-size: 1.4rem;
     margin: 1rem 0;
   }
+  @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  padding: 2rem;
+`;
 
 const DemoImageCard = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 0.5rem 2rem 2rem 2rem;
   background-color: rgba(200, 200, 200, 0.1);
   border-radius: 12px;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
+  p {
+    font-size: 1rem;
+  }
 `;
 
 const ImageContainer = styled.div`
