@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import demo1 from "../../assets/image/demo_image_1.jpg";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import shutter from "../../assets/icon/shutter.png";
 import "swiper/swiper-bundle.min.css";
-SwiperCore.use([EffectCoverflow, Pagination]);
+SwiperCore.use([EffectCoverflow]);
 
 const Demo = () => {
   return (
@@ -13,38 +14,47 @@ const Demo = () => {
         spaceBetween={50}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
-        pagination={{
-          clickable: true,
-        }}
         effect="coverflow"
       >
         <SwiperSlide>
-          <p className="photo-by-description">Photo By : C17AN</p>
-          <ImageContainer>
-            <img src={demo1} height={300} />
-            <ImagePaletteContainer>
-              <div className="demo-palette-1-blue" />
-              <div className="demo-palette-1-orange_1" />
-              <div className="demo-palette-1-orange_2" />
-              <div className="demo-palette-1-orange_3" />
-              <div className="demo-palette-1-black" />
-              <div className="demo-palette-1-green" />
-            </ImagePaletteContainer>
-          </ImageContainer>
+          <ContentContainer>
+            <ImageTitle>
+              <img src={shutter} />
+              <p className="photo-by-description">Photo By : C17AN</p>
+            </ImageTitle>
+            <ImageContainer>
+              <img src={demo1} height={300} />
+              <ImagePaletteContainer>
+                <div className="demo-palette-1-blue" />
+                <div className="demo-palette-1-orange_1" />
+                <div className="demo-palette-1-orange_2" />
+                <div className="demo-palette-1-orange_3" />
+                <div className="demo-palette-1-black" />
+                <div className="demo-palette-1-green" />
+              </ImagePaletteContainer>
+            </ImageContainer>
+            <p className="photo-title">행신, 늦은 봄의 노을</p>
+          </ContentContainer>
         </SwiperSlide>
         <SwiperSlide>
-          <p className="photo-by-description">Photo By : C17AN</p>
-          <ImageContainer>
-            <img src={demo1} height={300} />
-            <ImagePaletteContainer>
-              <div className="demo-palette-1-blue" />
-              <div className="demo-palette-1-orange_1" />
-              <div className="demo-palette-1-orange_2" />
-              <div className="demo-palette-1-orange_3" />
-              <div className="demo-palette-1-black" />
-              <div className="demo-palette-1-green" />
-            </ImagePaletteContainer>
-          </ImageContainer>
+          <ContentContainer>
+            <ImageTitle>
+              <img src={shutter} />
+              <p className="photo-by-description">Photo By : C17AN</p>
+            </ImageTitle>
+            <ImageContainer>
+              <img src={demo1} height={300} />
+              <ImagePaletteContainer>
+                <div className="demo-palette-1-blue" />
+                <div className="demo-palette-1-orange_1" />
+                <div className="demo-palette-1-orange_2" />
+                <div className="demo-palette-1-orange_3" />
+                <div className="demo-palette-1-black" />
+                <div className="demo-palette-1-green" />
+              </ImagePaletteContainer>
+            </ImageContainer>
+            <p className="photo-title">행신, 늦은 봄의 노을</p>
+          </ContentContainer>
         </SwiperSlide>
       </Swiper>
     </Container>
@@ -54,14 +64,19 @@ const Demo = () => {
 const Container = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 2rem 2rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   background-color: rgba(200, 200, 200, 0.1);
   border-radius: 12px;
   box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
   width: 750px;
+`;
 
-  .photo-by-description {
-    font-size: 0.9rem;
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  .photo-title {
+    font-size: 0.8rem;
+    text-align: center;
   }
 `;
 
@@ -69,6 +84,20 @@ const ImageContainer = styled.div`
   display: flex;
   img {
     display: inline-block;
+  }
+`;
+
+const ImageTitle = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    height: 1rem;
+  }
+  .photo-by-description {
+    font-size: 0.9rem;
+    margin: 1rem 0.5rem;
+    display: inline-block;
+    font-weight: 600;
   }
 `;
 
