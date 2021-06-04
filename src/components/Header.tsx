@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.png";
+import navbarIcon from "../assets/svg/navbar-icon.svg";
 
 interface Props {}
 
 const Header = (props: Props) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <Container>
       <Logo>
-        <img src={logo} width={48} height={48} />
+        <img src={logo} />
         <Link to="/">
           <p>Dazzly</p>
         </Link>
       </Logo>
       <Nav>
+        <img
+          src={navbarIcon}
+          className="navbar-icon"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
         <ul>
           <Link to="/palette">
             <li>내 팔레트 관리</li>
@@ -39,7 +46,8 @@ const Container = styled.div`
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   justify-content: space-between;
-  font-family: "Coming Soon";
+  @media screen and (max-width: 768px) {
+  }
 `;
 
 const Logo = styled.div`
@@ -47,6 +55,10 @@ const Logo = styled.div`
   justify-content: space-evenly;
   margin-left: 2rem;
   align-items: center;
+  img {
+    width: 48px;
+    height: 48px;
+  }
   a {
     text-decoration: none;
     color: #333;
@@ -57,6 +69,15 @@ const Logo = styled.div`
     font-weight: bold;
     color: #333;
     margin-left: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 1.2rem;
+    }
+    img {
+      width: 36px;
+      height: 36px;
+    }
   }
 `;
 
@@ -74,6 +95,24 @@ const Nav = styled.div`
       margin: 0 1.5rem;
       font-family: "KyoboHand";
       font-size: 1.1rem;
+    }
+  }
+  .navbar-icon {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      flex-direction: column;
+      justify-content: center;
+    }
+    ul {
+      position: fixed;
+      right: -200%;
+    }
+    .navbar-icon {
+      display: block;
+      cursor: pointer;
+      margin-right: 1rem;
     }
   }
 `;

@@ -23,6 +23,22 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   font-family: "koPub Dotum";
+`;
+
+const TopContent = styled.div`
+  display: flex;
+  padding: 1.5rem;
+
+  justify-content: space-between;
+  background-color: rgba(230, 155, 180, 0.1);
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const Description = styled.div`
+  padding: 2rem;
+
   h2 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -59,18 +75,18 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-`;
 
-const TopContent = styled.div`
-  display: flex;
-  padding: 1.5rem;
-
-  justify-content: space-between;
-  background-color: rgba(230, 155, 180, 0.1);
-`;
-
-const Description = styled.div`
-  padding: 2rem;
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 1rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
 `;
 
 export default Home;

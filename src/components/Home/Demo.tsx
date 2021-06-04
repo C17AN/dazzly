@@ -23,7 +23,7 @@ const Demo = () => {
               <p className="photo-by-description">Photo By : C17AN</p>
             </ImageTitle>
             <ImageContainer>
-              <img src={demo1} height={300} />
+              <img src={demo1} />
               <ImagePaletteContainer>
                 <div className="demo-palette-1-blue" />
                 <div className="demo-palette-1-orange_1" />
@@ -69,12 +69,18 @@ const Container = styled.div`
   border-radius: 12px;
   box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
   width: 750px;
+  @media screen and (max-width: 768px) {
+    & {
+      width: auto;
+    }
+  }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   .photo-title {
+    margin: 1rem 0 0.5rem 0;
     font-size: 0.8rem;
     text-align: center;
   }
@@ -84,6 +90,12 @@ const ImageContainer = styled.div`
   display: flex;
   img {
     display: inline-block;
+    height: 300px;
+  }
+  @media screen and (max-width: 768px) {
+    img {
+      width: 200px;
+    }
   }
 `;
 

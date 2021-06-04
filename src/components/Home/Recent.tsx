@@ -29,6 +29,9 @@ const Container = styled.div`
   background-color: rgba(150, 230, 180, 0.2);
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const PhotoContainer = styled.div`
@@ -43,6 +46,15 @@ const Title = styled.div`
     font-size: 1.5rem;
     font-family: "KoPub Dotum";
     font-weight: 100;
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 0.5rem;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
   }
 `;
 
