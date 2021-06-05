@@ -51,7 +51,7 @@ const Header = (props: Props) => {
             <Link to="/competition">
               <li>팔레트 월드컵</li>
             </Link>
-            <Link to="/signup">
+            <Link to="/login">
               <li>시작하기</li>
             </Link>
           </ul>

@@ -19,14 +19,14 @@ const Footer = (props: Props) => {
 };
 
 const Container = styled.div`
-  height: 150px;
+  height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #333;
   color: #fff;
   display: flex;
   font-weight: 100;
-  border-top: 1rem solid #fff;
   padding: 2rem;
 `;
 
@@ -35,12 +35,12 @@ const Logo = styled.div`
   align-items: center;
   margin-bottom: 1rem;
   img {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
   p {
-    font-size: 32px !important;
-    margin-left: 1rem;
+    font-size: 24px !important;
+    margin-left: 0.7rem;
   }
 `;
 
