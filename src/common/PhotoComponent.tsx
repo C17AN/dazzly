@@ -48,7 +48,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     & {
-      padding: 0.5rem 2rem 0.5rem 2rem;
+      padding: 0rem 1.5rem 0.5rem 1.5rem;
     }
   }
 `;
@@ -67,6 +67,7 @@ const ImageContainer = styled.div`
   display: flex;
   img {
     display: inline-block;
+    border-radius: 4px;
   }
 `;
 
@@ -80,7 +81,14 @@ const ImageTitle = styled.div`
     font-size: 0.9rem;
     margin: 1rem 0.5rem;
     display: inline-block;
-    font-weight: 300;
+    font-family: "Noto Sans KR";
+    font-weight: 100;
+  }
+
+  @media screen and (max-width: 768px) {
+    .photo-by-description {
+      font-size: 0.8rem;
+    }
   }
 `;
 

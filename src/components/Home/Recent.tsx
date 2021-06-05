@@ -28,11 +28,15 @@ const Recent = (props: Props) => {
 
 const Container = styled.div`
   padding: 1rem 2rem 1rem 2rem;
-  background-color: rgba(236, 22, 172, 0.05);
+  position: relative;
+  z-index: 1;
+  background-color: rgb(247, 242, 245);
   display: flex;
   flex-direction: column;
+  backdrop-filter: opacity(0%);
+
   @media screen and (max-width: 768px) {
-    padding: 2rem;
+    padding: 1rem;
   }
 `;
 

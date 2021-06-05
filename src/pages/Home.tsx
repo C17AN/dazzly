@@ -36,15 +36,17 @@ const TopContent = styled.div`
   height: 100%;
   justify-content: space-between;
   background-color: rgba(33, 27, 218, 0.3);
-  backdrop-filter: grayscale(100%);
+  backdrop-filter: grayscale(30%);
+  --webkit-backdrop-filter: grayscale(30%);
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
+
     z-index: -1;
     background-image: url("/image/background_1.jpg");
     background-repeat: no-repeat;
@@ -53,6 +55,9 @@ const TopContent = styled.div`
   }
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    &::before {
+      background-size: cover;
+    }
   }
 `;
 
@@ -105,6 +110,7 @@ const Description = styled.div`
     h2 {
       font-size: 1.4rem;
       margin-bottom: 20px;
+      text-align: center;
     }
   }
 `;

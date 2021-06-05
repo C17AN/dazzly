@@ -66,6 +66,8 @@ const Container = styled.div`
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  position: sticky;
+  z-index: 1;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
   }

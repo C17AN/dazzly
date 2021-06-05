@@ -7,8 +7,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         &::-webkit-scrollbar {
-        display: none;
-    }
+            display: none;
+        }
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     }

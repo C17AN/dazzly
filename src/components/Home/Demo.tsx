@@ -20,7 +20,7 @@ const Demo = () => {
           <ContentContainer>
             <ImageTitle>
               <img src={shutter} />
-              <p className="photo-by-description">Photo By @C17AN</p>
+              <p className="photo-by-description">@C17AN</p>
             </ImageTitle>
             <ImageContainer>
               <img src={demo1} />
@@ -40,10 +40,10 @@ const Demo = () => {
           <ContentContainer>
             <ImageTitle>
               <img src={shutter} />
-              <p className="photo-by-description">Photo By @C17AN</p>
+              <p className="photo-by-description">@C17AN</p>
             </ImageTitle>
             <ImageContainer>
-              <img src={demo1} />
+              <img src={demo1} width={300} height={160} />
               <ImagePaletteContainer>
                 <div className="demo-palette-1-blue" />
                 <div className="demo-palette-1-orange_1" />
@@ -71,8 +71,8 @@ const Container = styled.div`
   width: 750px;
   @media screen and (max-width: 768px) {
     & {
-      width: auto;
       max-width: 100%;
+      height: 250px;
     }
   }
 `;
@@ -90,15 +90,18 @@ const ContentContainer = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
+  width: auto;
+  height: auto;
   img {
+    border-radius: 4px;
     display: inline-block;
+    width: 533px;
     height: 300px;
   }
   @media screen and (max-width: 768px) {
     img {
-      flex: 1;
-      max-width: 100%;
-      height: auto;
+      width: 285px;
+      height: 140px;
     }
   }
 `;
@@ -106,6 +109,7 @@ const ImageContainer = styled.div`
 const ImageTitle = styled.div`
   display: flex;
   align-items: center;
+  font-family: "Noto Sans KR";
   img {
     height: 1rem;
   }
