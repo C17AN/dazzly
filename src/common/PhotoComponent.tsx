@@ -16,7 +16,7 @@ const PhotoComponent = (props: Props) => {
           <p className="photo-by-description">Photo By @C17AN</p>
         </ImageTitle>
         <ImageContainer>
-          <img src={demo1} width={200} height={120} />
+          <img src={demo1} />
           <ImagePaletteContainer>
             <div className="demo-palette-1-blue" />
             <div className="demo-palette-1-orange_1" />
@@ -68,6 +68,14 @@ const ImageContainer = styled.div`
   img {
     display: inline-block;
     border-radius: 4px;
+    width: 320px;
+    height: 180px;
+  }
+  @media screen and (max-width: 768px) {
+    img {
+      width: 200px;
+      height: 120px;
+    }
   }
 `;
 
@@ -103,41 +111,77 @@ const ImagePaletteContainer = styled.div`
     content: " ";
     display: flex;
     background-color: #1d5491;
-    height: 20px;
+    height: 30px;
   }
   .demo-palette-1-orange_1::after {
     content: " ";
     display: flex;
     background-color: #e9ad83;
-    height: 20px;
+    height: 30px;
   }
   .demo-palette-1-orange_2::after {
     content: " ";
     display: flex;
     background-color: #82676a;
-    height: 20px;
+    height: 30px;
   }
   .demo-palette-1-orange_3::after {
     content: " ";
     display: flex;
     background-color: #a57466;
-    height: 20px;
+    height: 30px;
   }
   .demo-palette-1-black::after {
     content: " ";
     display: flex;
     background-color: #1d1c1b;
-    height: 20px;
+    height: 30px;
   }
   .demo-palette-1-green::after {
     content: " ";
     display: flex;
     background-color: #3b520a;
-    height: 20px;
+    height: 30px;
   }
   @media screen and (max-width: 768px) {
     & {
       width: 80px;
+      .demo-palette-1-blue::after {
+        content: " ";
+        display: flex;
+        background-color: #1d5491;
+        height: 20px;
+      }
+      .demo-palette-1-orange_1::after {
+        content: " ";
+        display: flex;
+        background-color: #e9ad83;
+        height: 20px;
+      }
+      .demo-palette-1-orange_2::after {
+        content: " ";
+        display: flex;
+        background-color: #82676a;
+        height: 20px;
+      }
+      .demo-palette-1-orange_3::after {
+        content: " ";
+        display: flex;
+        background-color: #a57466;
+        height: 20px;
+      }
+      .demo-palette-1-black::after {
+        content: " ";
+        display: flex;
+        background-color: #1d1c1b;
+        height: 20px;
+      }
+      .demo-palette-1-green::after {
+        content: " ";
+        display: flex;
+        background-color: #3b520a;
+        height: 20px;
+      }
     }
   }
 `;

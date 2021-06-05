@@ -18,8 +18,6 @@ const Recent = (props: Props) => {
         <PhotoComponent />
         <PhotoComponent />
         <PhotoComponent />
-        <PhotoComponent />
-        <PhotoComponent />
       </PhotoContainer>
       <MoreButton>더 보러가기</MoreButton>
     </Container>

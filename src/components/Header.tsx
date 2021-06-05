@@ -94,6 +94,9 @@ const Logo = styled.div`
     margin-left: 1rem;
   }
   @media screen and (max-width: 768px) {
+    & {
+      margin-left: 1rem;
+    }
     p {
       font-size: 1.2rem;
     }

@@ -134,7 +134,7 @@ const DescriptionBox = styled.div`
   @media screen and (max-width: 768px) {
     p {
       font-size: 1rem;
-      margin: 0.7rem 0;
+      margin: 0.5rem 0;
     }
   }
 `;

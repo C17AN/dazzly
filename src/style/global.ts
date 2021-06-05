@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
         margin: 0;
+        font-family: "Noto Sans Kr";
         &::-webkit-scrollbar {
             display: none;
         }

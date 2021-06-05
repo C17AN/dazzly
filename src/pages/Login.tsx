@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Input from "../components/Login/Input";
 import LogoIcon from "../assets/logo/logo.png";
+import kakaoIcon from "../assets/icon/icon-kakao.png";
 
 interface Props {}
 
@@ -9,15 +10,25 @@ const Login = (props: Props) => {
   return (
     <Container>
       <LoginContainer>
-        <Logo>
-          <img src={LogoIcon} />
-          <div>일상 속의 색을 만나보세요</div>
-        </Logo>
+        <LogoContainer>
+          <Logo>
+            <img src={LogoIcon} />
+            <p>Dazzly</p>
+          </Logo>
+          <p className="logo-slogan">일상 속의 색을 만나보세요</p>
+        </LogoContainer>
         <Input placeholder={"아이디 또는 이메일"}></Input>
-        <Input placeholder={"비밀번호"}></Input>
-        <LoginButton service="kakao">카카오계정으로 로그인</LoginButton>
-        <LoginButton service="google">Google 계정으로 로그인</LoginButton>
+        <Input placeholder={"비밀번호"} type="password"></Input>
+        <LoginButton service="kakao">
+          <img src={kakaoIcon} width={16} />
+          카카오계정으로 로그인
+        </LoginButton>
+        {/* <LoginButton service="google">Google 계정으로 로그인</LoginButton> */}
         <LoginButton>로그인</LoginButton>
+        <OptionContainer>
+          <p className="register">대즐리 시작하기</p>
+          <p>아이디 또는 비밀번호를 잊으셨나요?</p>
+        </OptionContainer>
       </LoginContainer>
     </Container>
   );
@@ -43,7 +54,26 @@ const Container = styled.div`
   }
 `;
 
-const Logo = styled.div``;
+const LogoContainer = styled.div`
+  margin-bottom: 2.5rem;
+  .logo-slogan {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-family: "Noto Sans Kr";
+    font-size: 0.9rem;
+  }
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-family: "SDSamliphopangche_Outline";
+    font-size: 2rem;
+    margin-left: 0.7rem;
+  }
+`;
 
 const LoginContainer = styled.div`
   display: flex;
@@ -73,6 +103,10 @@ const LoginContainer = styled.div`
 
 const LoginButton = styled.button<{ service?: string }>`
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
   padding: 0.5rem;
   font-size: 0.9rem;
   cursor: pointer;
@@ -87,6 +121,21 @@ const LoginButton = styled.button<{ service?: string }>`
       return "#f7f7f7";
     }
   }};
+  img {
+    margin-right: 0.5rem;
+  }
+`;
+
+const OptionContainer = styled.div`
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  font-size: 0.8rem;
+  .register {
+    padding-right: 1rem;
+    border-right: 1px solid #cdcdcd;
+    margin-right: 1rem;
+  }
 `;
 
 export default Login;
