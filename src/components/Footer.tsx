@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
           <img src={LogoIcon} />
           <p className="title-dazzly">Dazzly</p>
         </Logo>
-        <p>색, 그리고 일상.</p>
+        <p>일상에서, 색을 찾다.</p>
       </Slogan>
     </Container>
   );
