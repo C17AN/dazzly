@@ -39,12 +39,17 @@ const Title = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-
 `;
 
 const ImageContainer = styled.img`
   width: 100%;
   object-fit: contain;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    transition: 0.2s ease-in-out;
+    box-shadow: 3px 3px 10px #333;
+  }
 `;
 
 const ImageInfo = styled.div`
@@ -52,12 +57,11 @@ const ImageInfo = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   padding-left: 1rem;
   height: 50px;
   position: relative;
-  bottom: 50px;
+  bottom: 52px;
   width: 100%;
 `;
 
