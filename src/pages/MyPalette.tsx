@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Slot from "../components/Slot";
 import { PaletteContext } from "../App";
 import Palette from "../components/Palette";
@@ -7,14 +7,17 @@ import styled from "styled-components";
 
 const MyPalette = () => {
   const { paletteCount } = useContext(PaletteContext);
+  const [listType, setListType] = useState("photo");
 
   return (
     <Container>
       <Menu>
-        <div>
-          <h3>내 사진 목록</h3>
-          <h3>내 팔레트 목록</h3>
-        </div>
+        <TypeContainer>
+          <h3 onClick={() => setListType("photo")} className="type-left">
+            내 사진 목록
+          </h3>
+          <h3 onClick={() => setListType("palette")}>내 팔레트 목록</h3>
+        </TypeContainer>
         <div>
           <input type="checkbox" id="background-show-checkbox" />
           <label htmlFor="background-show-checkbox">배경 그라데이션 효과 표시</label>
@@ -62,6 +65,18 @@ const Menu = styled.div`
   }
   #background-show-checkbox {
     margin-right: 10px;
+  }
+`;
+
+const TypeContainer = styled.div`
+  display: flex;
+  h3 {
+    cursor: pointer;
+  }
+  .type-left {
+    border-right: 1px solid #333;
+    padding-right: 1rem;
+    margin-right: 1rem;
   }
 `;
 
