@@ -1,9 +1,17 @@
 import React from "react";
+import styled from "styled-components";
 
 interface Props {}
 
 const Competition = (props: Props) => {
-  return <div>월드컵</div>;
+  return <Container>준비중입니다!</Container>;
 };
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+`;
 
 export default Competition;
